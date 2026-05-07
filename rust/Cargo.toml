@@ -1,0 +1,23 @@
+[package]
+name = "pdfluent-examples"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[example]]
+name = "text_extraction"
+
+[[example]]
+name = "form_fill"
+
+[[example]]
+name = "merge_pdfs"
+
+[[example]]
+name = "pdfa_validate"
+
+[[example]]
+name = "redact_text"
+
+[dependencies]
+pdfluent = { version = "1.0.0-beta.5", features = ["signing", "pdfa", "redaction"] }

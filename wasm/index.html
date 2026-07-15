@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PDFluent WASM demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; }
+    pre { background: #f4f4f4; padding: 1rem; white-space: pre-wrap; border-radius: 6px; }
+    button { font-size: 1rem; padding: 0.5rem 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>PDFluent SDK — WASM demo</h1>
+  <p>
+    Runs entirely client-side via <a href="https://www.npmjs.com/package/@pdfluent/sdk-wasm">@pdfluent/sdk-wasm</a>.
+    No file leaves the browser.
+  </p>
+  <button id="run">Open sample.pdf and extract text</button>
+  <pre id="output">(click the button)</pre>
+
+  <script type="module">
+    import init, { PdfDoc } from "https://cdn.jsdelivr.net/npm/@pdfluent/sdk-wasm@1.0.0-beta.17.3/xfa_wasm.js";
+
+    const output = document.getElementById("output");
+    document.getElementById("run").addEventListener("click", async () => {
+      output.textContent = "Loading WASM module…";
+      await init();
+
+      output.textContent = "Fetching sample.pdf…";
+      const response = await fetch("../sample.pdf");
+      const bytes = new Uint8Array(await response.arrayBuffer());
+
+      const doc = PdfDoc.open(bytes);
+      const pageCount = doc.pageCount();
+      let text = "";
+      for (let i = 0; i < pageCount; i++) {
+        text += `--- Page ${i + 1} ---\n${doc.text(i)}\n\n`;
+      }
+      output.textContent = `Pages: ${pageCount}\n\n${text}`;
+    });
+  </script>
+</body>
+</html>

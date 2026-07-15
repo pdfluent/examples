@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Weekly, so a new PDFluent SDK release that breaks the public API here
+    # is caught even without a push to this repo.
+    - cron: "0 6 * * 1"
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Check all examples build against the latest published pdfluent
+        working-directory: rust
+        run: cargo check --examples
+      - name: Smoke-run text_extraction against the bundled sample PDF
+        working-directory: rust
+        run: cargo run --example text_extraction -- ../sample.pdf

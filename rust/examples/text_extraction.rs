@@ -21,7 +21,6 @@ fn main() -> Result<()> {
 
     if per_page {
         for (i, page) in doc.pages().enumerate() {
-            let page = page?;
             let text = page.text()?;
             println!("--- Page {} ({} chars) ---", i + 1, text.len());
             if text.trim().is_empty() {

@@ -20,4 +20,4 @@ name = "pdfa_validate"
 name = "redact_text"
 
 [dependencies]
-pdfluent = { version = "1.0.0-beta.5", features = ["signing", "pdfa", "redaction"] }
+pdfluent = { version = "1.0.0-beta.17", features = ["signing", "pdfa", "redaction"] }

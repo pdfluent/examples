@@ -1,8 +1,10 @@
 # PDFluent Examples
 
-Working code examples for the [PDFluent SDK](https://pdfluent.com), a pure-Rust PDF SDK with XFA, PDF/A, digital signatures, and redaction, with bindings for Rust, Python, Node.js, WASM, .NET, and Java.
+[![CI](https://github.com/pdfluent/examples/actions/workflows/ci.yml/badge.svg)](https://github.com/pdfluent/examples/actions/workflows/ci.yml)
 
-This repository currently has Rust examples. For the other languages, see the install snippets and docs linked below.
+Working code examples for the [PDFluent SDK](https://github.com/pdfluent/pdfluent-sdk), a pure-Rust PDF SDK with XFA, PDF/A, digital signatures, and redaction, with bindings for Rust, Python, Node.js, WASM, .NET, and Java.
+
+This repository currently has Rust examples and a browser/WASM demo. For the other languages, see the install snippets and docs linked below.
 
 ## Quick start
 
@@ -21,6 +23,9 @@ cargo run --example text_extraction -- /path/to/your.pdf
 | [`merge_pdfs`](rust/examples/merge_pdfs.rs) | Merge multiple PDFs into one with a shared bookmark structure |
 | [`pdfa_validate`](rust/examples/pdfa_validate.rs) | Validate PDF/A-1b/2b/3b compliance, list violations |
 | [`redact_text`](rust/examples/redact_text.rs) | Search-based redaction: find patterns and permanently remove them |
+| [`wasm/index.html`](wasm/index.html) | Open a PDF and extract its text entirely in the browser via `@pdfluent/sdk-wasm` — no server, no upload |
+
+All examples run against [`sample.pdf`](sample.pdf), a small public test document bundled in this repo.
 
 ## Installation
 
@@ -56,7 +61,7 @@ PDFluent is free for evaluation. A valid license is required for production use.
 
 Output from unlicensed builds carries an "unlicensed evaluation" marker in the PDF metadata.
 
-- **Trial key (30 days):** <https://pdfluent.com/trial>
+- **30-day evaluation key** (full features, no output watermark): <https://pdfluent.com/trial>
 - **Pricing:** <https://pdfluent.com/sdk/pricing>
 - **Full docs:** <https://pdfluent.com/docs>
 

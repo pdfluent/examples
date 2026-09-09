@@ -57,12 +57,14 @@ The same engine is available outside Rust:
 
 ## Licensing
 
-PDFluent is free for evaluation. A valid license is required for production use.
+AGPL-3.0 or a commercial licence, at your option. The AGPL is the default and
+the complete product: there is no licence key, no activation call and no tier,
+every feature works in every build, and nothing marks the output. If you cannot
+accept the copyleft obligation, the commercial licence is sold yearly and
+self-service in four options: Commercial (per organisation), OEM Startup and
+OEM (per product), and Priority support (an add-on).
 
-Output from unlicensed builds carries an "unlicensed evaluation" marker in the PDF metadata.
-
-- **30-day evaluation key** (full features, no output watermark): <https://pdfluent.com/trial>
-- **Pricing:** <https://pdfluent.com/sdk/pricing>
+- **Licence terms and prices:** <https://pdfluent.com/sdk/pricing>
 - **Full docs:** <https://pdfluent.com/docs>
 
 ## More resources

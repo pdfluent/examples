@@ -19,5 +19,38 @@ name = "pdfa_validate"
 [[example]]
 name = "redact_text"
 
+[[example]]
+name = "howto_compress_pdf"
+
+[[example]]
+name = "howto_encrypt_pdf"
+
+[[example]]
+name = "howto_extract_text_by_page"
+
+[[example]]
+name = "howto_extract_text_pdf"
+
+[[example]]
+name = "howto_read_pdf_metadata"
+
+[[example]]
+name = "howto_write_pdf_metadata"
+
+[[example]]
+name = "howto_generate_pdf_thumbnails"
+
+[[example]]
+name = "howto_get_pdf_page_count"
+
+[[example]]
+name = "howto_merge_pdfs"
+
+[[example]]
+name = "howto_render_pdf_to_jpeg"
+
+[[example]]
+name = "howto_render_pdf_to_png"
+
 [dependencies]
-pdfluent = { version = "1.0.0-beta.17", features = ["signing", "pdfa", "redaction"] }
+pdfluent = { version = "1.0.0", features = ["signing", "pdfa", "redaction"] }

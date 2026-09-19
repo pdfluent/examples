@@ -23,7 +23,20 @@ cargo run --example text_extraction -- /path/to/your.pdf
 | [`merge_pdfs`](rust/examples/merge_pdfs.rs) | Merge multiple PDFs into one with a shared bookmark structure |
 | [`pdfa_validate`](rust/examples/pdfa_validate.rs) | Validate PDF/A-1b/2b/3b compliance, list violations |
 | [`redact_text`](rust/examples/redact_text.rs) | Search-based redaction: find patterns and permanently remove them |
+| [`howto_compress_pdf`](rust/examples/howto_compress_pdf.rs) | Compress a PDF in Rust — the complete program from [the guide](https://pdfluent.com/how-to/compress-pdf-rust), also shown in its video |
+| [`howto_encrypt_pdf`](rust/examples/howto_encrypt_pdf.rs) | Encrypt a PDF with a password in Rust — the complete program from [the guide](https://pdfluent.com/how-to/encrypt-pdf-rust), also shown in its video |
+| [`howto_extract_text_by_page`](rust/examples/howto_extract_text_by_page.rs) | Extract text page by page from a PDF in Rust — the complete program from [the guide](https://pdfluent.com/how-to/extract-text-by-page-rust), also shown in its video |
+| [`howto_extract_text_pdf`](rust/examples/howto_extract_text_pdf.rs) | Extract text from a PDF in Rust — the complete program from [the guide](https://pdfluent.com/how-to/extract-text-pdf-rust), also shown in its video |
+| [`howto_read_pdf_metadata`](rust/examples/howto_read_pdf_metadata.rs) | Read PDF metadata in Rust — the complete program from [the guide](https://pdfluent.com/how-to/read-pdf-metadata-rust), also shown in its video |
+| [`howto_write_pdf_metadata`](rust/examples/howto_write_pdf_metadata.rs) | Write PDF metadata in Rust — the complete program from [the guide](https://pdfluent.com/how-to/write-pdf-metadata-rust), also shown in its video |
+| [`howto_generate_pdf_thumbnails`](rust/examples/howto_generate_pdf_thumbnails.rs) | Generate page thumbnails from a PDF in Rust — the complete program from [the guide](https://pdfluent.com/how-to/generate-pdf-thumbnails-rust), also shown in its video |
+| [`howto_get_pdf_page_count`](rust/examples/howto_get_pdf_page_count.rs) | Get the page count of a PDF in Rust — the complete program from [the guide](https://pdfluent.com/how-to/get-pdf-page-count-rust), also shown in its video |
+| [`howto_merge_pdfs`](rust/examples/howto_merge_pdfs.rs) | Merge PDFs in Rust — the complete program from [the guide](https://pdfluent.com/how-to/merge-pdfs-rust), also shown in its video |
+| [`howto_render_pdf_to_jpeg`](rust/examples/howto_render_pdf_to_jpeg.rs) | Render PDF pages to JPEG images in Rust — the complete program from [the guide](https://pdfluent.com/how-to/render-pdf-to-jpeg-rust), also shown in its video |
+| [`howto_render_pdf_to_png`](rust/examples/howto_render_pdf_to_png.rs) | Render a PDF page to PNG in Rust — the complete program from [the guide](https://pdfluent.com/how-to/render-pdf-to-png-rust), also shown in its video |
 | [`wasm/index.html`](wasm/index.html) | Open a PDF and extract its text entirely in the browser via `@pdfluent/sdk-wasm` — no server, no upload |
+
+The `howto_*` examples are the programs from the how-to guides on pdfluent.com, byte for byte; each guide page links here and embeds the video in which the same code is typed and run.
 
 All examples run against [`sample.pdf`](sample.pdf), a small public test document bundled in this repo.
 

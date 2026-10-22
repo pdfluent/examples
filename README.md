@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/pdfluent/examples/actions/workflows/ci.yml/badge.svg)](https://github.com/pdfluent/examples/actions/workflows/ci.yml)
 
-Working code examples for the [PDFluent SDK](https://github.com/pdfluent/pdfluent-sdk), a pure-Rust PDF SDK with XFA, PDF/A, digital signatures, and redaction, with bindings for Rust, Python, Node.js, WASM, .NET, and Java.
+Working code examples for the [PDFluent SDK](https://github.com/pdfluent/pdfluent-sdk), a PDF SDK written in Rust, with XFA, PDF/A, digital signatures, and redaction, with bindings for Rust, Python, Node.js, WASM, .NET, and Java.
 
 This repository currently has Rust examples and a browser/WASM demo. For the other languages, see the install snippets and docs linked below.
 
@@ -46,14 +46,14 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-pdfluent = "1.0.0-beta.17"
+pdfluent = "1"
 ```
 
 Or with specific features:
 
 ```toml
 [dependencies]
-pdfluent = { version = "1.0.0-beta.17", features = ["signing", "pdfa", "redaction"] }
+pdfluent = { version = "1", features = ["signing", "pdfa", "redaction"] }
 ```
 
 ## Other languages
@@ -66,7 +66,7 @@ The same engine is available outside Rust:
 | Node.js | [`@pdfluent/node`](https://www.npmjs.com/package/@pdfluent/node) on npm | [pdfluent.com/docs](https://pdfluent.com/docs) |
 | Browser / WASM | [`@pdfluent/sdk-wasm`](https://www.npmjs.com/package/@pdfluent/sdk-wasm) on npm | [pdfluent.com/docs/wasm](https://pdfluent.com/docs/wasm) |
 | .NET | [`pdfluent`](https://www.nuget.org/packages/pdfluent) on NuGet | [pdfluent.com/docs/dotnet](https://pdfluent.com/docs/dotnet) |
-| Java | [`com.pdfluent:pdfluent`](https://central.sonatype.com/artifact/com.pdfluent/pdfluent) on Maven Central | [pdfluent.com/docs/java](https://pdfluent.com/docs/java) |
+| Java | [`com.pdfluent:pdfluent`](https://maven.pdfluent.com/) on maven.pdfluent.com | [pdfluent.com/docs/java](https://pdfluent.com/docs/java) |
 
 ## Licensing
 
@@ -86,3 +86,7 @@ OEM (per product), and Priority support (an add-on).
 - [Rust API reference](https://docs.rs/pdfluent)
 - [Changelog](https://pdfluent.com/changelog)
 - [Support](https://pdfluent.com/support)
+- [SDK source](https://github.com/pdfluent/pdfluent-sdk)
+- [MCP server for AI apps](https://github.com/pdfluent/pdfluent-mcp)
+- [Benchmark harness](https://github.com/pdfluent/pdfluent-bench)
+- [PDFluent editor](https://github.com/pdfluent/pdfluent), free for everyone including commercial use

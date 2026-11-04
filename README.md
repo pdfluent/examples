@@ -72,14 +72,14 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-pdfluent = "1.0.0-beta.17"
+pdfluent = "1.0.0"
 ```
 
 Or with specific features:
 
 ```toml
 [dependencies]
-pdfluent = { version = "1.0.0-beta.17", features = ["signing", "pdfa", "redaction"] }
+pdfluent = { version = "1.0.0", features = ["signing", "pdfa", "redaction"] }
 ```
 
 ## Other languages
@@ -98,12 +98,14 @@ The same engine is available outside Rust:
 
 ## Licensing
 
-AGPL-3.0 or a commercial licence, at your option. The AGPL is the default and
-the complete product: there is no licence key, no activation call and no tier,
-every feature works in every build, and nothing marks the output. If you cannot
-accept the copyleft obligation, the commercial licence is sold yearly and
-self-service in four options: Commercial (per organisation), OEM Startup and
-OEM (per product), and Priority support (an add-on).
+The examples in this repository are licensed under the MIT licence (see
+[LICENSE](LICENSE)). The PDFluent SDK they call stays under AGPL-3.0 or a
+commercial licence, at your option. The AGPL is the default and the complete
+product: there is no licence key, no activation call and no tier, every feature
+works in every build, and nothing marks the output. If you cannot accept the
+copyleft obligation, the commercial licence is sold yearly and self-service in
+four options: Commercial (per organisation), OEM Startup and OEM (per product),
+and Priority support (an add-on). Security reports go to hello@pdfluent.com.
 
 - **Licence terms and prices:** <https://pdfluent.com/sdk/pricing>
 - **Full docs:** <https://pdfluent.com/docs>

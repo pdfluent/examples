@@ -1,0 +1,5 @@
+langchain>=1.0
+langgraph>=1.2
+langchain-pdfluent>=0.2
+# only for a real model:
+# langchain-openai

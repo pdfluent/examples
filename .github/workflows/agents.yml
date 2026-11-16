@@ -1,0 +1,79 @@
+name: Agent examples
+
+on:
+  push:
+    branches: [main]
+    paths: ["agents/**", ".github/workflows/agents.yml", "sample.pdf"]
+  pull_request:
+    paths: ["agents/**", ".github/workflows/agents.yml", "sample.pdf"]
+  schedule:
+    # Weekly: these examples sit on fast-moving frameworks and unpinned upper bounds.
+    - cron: "30 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: ${{ matrix.example }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { example: openai-agents-sdk, script: agent.py, expect: "Tool result received" }
+          - { example: crewai, script: crew.py, expect: "requires your own model key" }
+          - { example: langgraph, script: graph.py, expect: "Tool result:" }
+          - { example: semantic-kernel, script: plugin.py, expect: "pages containing 'multi-page': [1]" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        working-directory: agents/${{ matrix.example }}
+        run: pip install -r requirements.txt
+      - name: Run against sample.pdf, no model key
+        working-directory: agents/${{ matrix.example }}
+        env:
+          OPENAI_API_KEY: ""
+          CREWAI_DISABLE_TELEMETRY: "true"
+          OTEL_SDK_DISABLED: "true"
+        run: |
+          set -o pipefail
+          python ${{ matrix.script }} | tee out.txt
+          grep -qF "${{ matrix.expect }}" out.txt
+          grep -q "Sample Document" out.txt
+
+  typescript:
+    name: ${{ matrix.example }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        example: [vercel-ai-sdk, mastra]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pdfluent-mcp
+        run: pip install pdfluent-mcp
+      - name: Install
+        working-directory: agents/${{ matrix.example }}
+        run: npm ci
+      - name: Type check
+        working-directory: agents/${{ matrix.example }}
+        run: npx tsc --noEmit --module nodenext --moduleResolution nodenext --target es2022 --skipLibCheck --strict agent.ts
+      - name: Run against sample.pdf, no model key
+        working-directory: agents/${{ matrix.example }}
+        env:
+          OPENAI_API_KEY: ""
+        run: |
+          set -o pipefail
+          npx tsx agent.ts | tee out.txt
+          grep -q "get_metadata" out.txt
+          grep -q "Sample Document" out.txt

@@ -1,0 +1,2 @@
+semantic-kernel>=1.47
+pdfluent>=1.4

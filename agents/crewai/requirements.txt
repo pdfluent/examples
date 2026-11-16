@@ -1,0 +1,2 @@
+crewai>=1.15
+pdfluent>=1.4

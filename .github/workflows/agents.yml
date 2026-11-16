@@ -36,7 +36,6 @@ jobs:
       - name: Run against sample.pdf, no model key
         working-directory: agents/${{ matrix.example }}
         env:
-          OPENAI_API_KEY: ""
           CREWAI_DISABLE_TELEMETRY: "true"
           OTEL_SDK_DISABLED: "true"
         run: |
@@ -70,8 +69,6 @@ jobs:
         run: npx tsc --noEmit --module nodenext --moduleResolution nodenext --target es2022 --skipLibCheck --strict agent.ts
       - name: Run against sample.pdf, no model key
         working-directory: agents/${{ matrix.example }}
-        env:
-          OPENAI_API_KEY: ""
         run: |
           set -o pipefail
           npx tsx agent.ts | tee out.txt

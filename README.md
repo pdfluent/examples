@@ -42,6 +42,10 @@ cargo run --example text_extraction -- ../sample.pdf
 | [`redact_text`](rust/examples/redact_text.rs) | Search-based redaction: find patterns and permanently remove them | Rust | `cargo run --example redact_text -- in.pdf out.pdf PATTERN` |
 | [`wasm/index.html`](wasm/index.html) | Open a PDF and extract its text entirely in the browser via `@pdfluent/sdk-wasm`, no server, no upload | JavaScript (WASM) | Serve the repo root (`python3 -m http.server`), open `/wasm/` |
 
+### Agent frameworks
+
+Read a PDF from OpenAI Agents SDK, Vercel AI SDK, Mastra, CrewAI, LangGraph and Semantic Kernel. See [`agents/`](agents/README.md).
+
 ### How-to guide programs
 
 The `howto_*` examples are the programs from the how-to guides on pdfluent.com, byte for byte; each guide page links here and embeds the video in which the same code is typed and run. Each one reads the input file named in its source, from the directory you run it in.

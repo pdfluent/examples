@@ -1,3 +1,5 @@
 /rust/target/
 *.pdf
 !rust/examples/fixtures/
+/agents/*/node_modules/
+__pycache__/
